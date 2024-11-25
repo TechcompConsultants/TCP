@@ -1,0 +1,14 @@
+﻿@page "/CommandTest"
+<h3>Command Test Page</h3>
+
+<button class="btn btn-primary" @onclick="OnButtonClick">Execute Command</button>
+
+@code {
+    private void OnButtonClick()
+    {
+        Console.WriteLine("Button clicked! Navigating to the Data page...");
+        NavigationManager.NavigateTo("/data");
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+}
